@@ -1,0 +1,7 @@
+version: '3'
+services:
+  classifier:
+    build: ./
+    restart: on-failure
+    ports:
+      - "8080:8080"
