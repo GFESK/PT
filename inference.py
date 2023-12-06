@@ -13,6 +13,9 @@ from flask import Flask, request
 
 from utils import cleaning, tokenize, config_reader, ip_valid
 
+import warnings
+warnings.filterwarnings("ignore")
+
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case=True)
 model = torch.load('model/bert_model', map_location=torch.device(device))
